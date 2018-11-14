@@ -15,5 +15,8 @@ public class FeignController {
     @GetMapping("/hi")
     public String sayHello(@RequestParam(value = "name")String name){
         return "feign,"+schedualServiceHi.sayHello(name);
+
     }
+
+
 }
