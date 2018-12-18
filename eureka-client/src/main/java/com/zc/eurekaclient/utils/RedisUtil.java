@@ -160,8 +160,8 @@ public class RedisUtil {
     */
     public long sequence(String key){
         Object o=get(key);
-        if (o!=null&&(o instanceof Integer||
-        o instanceof Long)){
+        if (o instanceof Integer||
+        o instanceof Long){
              return incr(key,1);
         }else {
             o=0L;
@@ -554,4 +554,48 @@ public class RedisUtil {
         }
     }
 
+
+    /**------------------------message queue-------------------------*/
+
+
+    //实现简单的消息队列,其实就是利用redis里面的list是由双向列表实现的,
+    //使用左进右出来实现,使用brpop的方式取值,，这个指令只有在有元素时才返回，没有则会阻塞直到超时返回null
+    //这样防止消耗占用过大的情况
+
+    //因为brpop是jedis的方法,不能直接使用redisTemplate
+    /**
+     * @author zhuCan
+     * @date 2018-12-17 16:36
+     * @description :  把消息放入队列中
+    */
+    public boolean putMessage(String queue,String ... message){
+        try{
+            Long result=redisTemplate.opsForList().leftPushAll(queue,message);
+            return result!=null;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public Object getMessage(String queue){
+        try{
+           Object result=redisTemplate.opsForList().rightPop(queue);
+            return result;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public boolean queueIsEmpty(String queue){
+        try{
+            Long res=redisTemplate.opsForList().size(queue);
+            return res==null||res==0L;
+
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
