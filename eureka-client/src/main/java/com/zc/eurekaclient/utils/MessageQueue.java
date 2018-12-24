@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
  * Project parent.
  * Date 2018/12/17   Time 17:02.
  */
+
 @Configuration
 public class MessageQueue extends Thread{
     @Autowired
