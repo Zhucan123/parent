@@ -1,8 +1,7 @@
 package com.zc.loginserver.dbTest;
 
-import com.zc.loginserver.domain.entity.Role;
-import com.zc.loginserver.domain.entity.RoleExample;
-import com.zc.loginserver.domain.repository.RoleMapper;
+import com.zc.loginserver.domain.entity.SysPermission;
+import com.zc.loginserver.domain.repository.SysPermissionMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,18 +18,15 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class MybatisTest {
+
     @Resource
-    private RoleMapper roleMapper;
+    private SysPermissionMapper permissionMapper;
 
     @Test
     public void test(){
-        RoleExample roleExample=new RoleExample();
-        RoleExample.Criteria criteria=roleExample.createCriteria();
-        //criteria.andIdGreaterThan(0L);
-        List<Role> roleExampleList=roleMapper.selectByExample(roleExample);
-        for (Role role:roleExampleList){
-            System.err.println(role.getCategory());
+        List<SysPermission> permissionList = permissionMapper.findPermissionByUserId(1L);
+        for (SysPermission s:permissionList){
+            System.err.println(s.getName());
         }
-
     }
 }

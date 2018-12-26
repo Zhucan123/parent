@@ -279,7 +279,7 @@
             <ignoreColumn column="deptId" delimitedColumnName=""/>
             &ndash;&gt;
         </table>-->
-        <table tableName="t_admin"  domainObjectName="Admin">
+        <table tableName="sys_permission"  domainObjectName="SysPermission">
             <!-- 参考 javaModelGenerator 的 constructorBased属性-->
             <property name="constructorBased" value="false"/>
             <!-- 默认为false，如果设置为true，在生成的SQL中，table名字不会加上catalog或schema； -->
@@ -289,7 +289,7 @@
             <!-- 指定是否只生成domain类，如果设置为true，只生成domain类，如果还配置了sqlMapGenerator，那么在mapper XML文件中，只生成resultMap元素 -->
             <property name="modelOnly" value="false"/>
         </table>
-        <table tableName="t_group" domainObjectName="Group">
+        <table tableName="sys_permission_role" domainObjectName="SysPermissionRole">
             <!-- 参考 javaModelGenerator 的 constructorBased属性-->
             <property name="constructorBased" value="false"/>
             <!-- 默认为false，如果设置为true，在生成的SQL中，table名字不会加上catalog或schema； -->
@@ -299,7 +299,7 @@
             <!-- 指定是否只生成domain类，如果设置为true，只生成domain类，如果还配置了sqlMapGenerator，那么在mapper XML文件中，只生成resultMap元素 -->
             <property name="modelOnly" value="false"/>
         </table>
-        <table tableName="t_group_user" domainObjectName="GroupUser">
+        <table tableName="sys_role" domainObjectName="SysRole">
             <!-- 参考 javaModelGenerator 的 constructorBased属性-->
             <property name="constructorBased" value="false"/>
             <!-- 默认为false，如果设置为true，在生成的SQL中，table名字不会加上catalog或schema； -->
@@ -309,7 +309,7 @@
             <!-- 指定是否只生成domain类，如果设置为true，只生成domain类，如果还配置了sqlMapGenerator，那么在mapper XML文件中，只生成resultMap元素 -->
             <property name="modelOnly" value="false"/>
         </table>
-        <table tableName="t_group_role" domainObjectName="GroupRole">
+        <table tableName="sys_role_user" domainObjectName="SysRoleUser">
             <!-- 参考 javaModelGenerator 的 constructorBased属性-->
             <property name="constructorBased" value="false"/>
             <!-- 默认为false，如果设置为true，在生成的SQL中，table名字不会加上catalog或schema； -->
@@ -319,7 +319,7 @@
             <!-- 指定是否只生成domain类，如果设置为true，只生成domain类，如果还配置了sqlMapGenerator，那么在mapper XML文件中，只生成resultMap元素 -->
             <property name="modelOnly" value="false"/>
         </table>
-        <table tableName="t_role" domainObjectName="Role">
+        <table tableName="sys_user" domainObjectName="SysUser">
             <!-- 参考 javaModelGenerator 的 constructorBased属性-->
             <property name="constructorBased" value="false"/>
             <!-- 默认为false，如果设置为true，在生成的SQL中，table名字不会加上catalog或schema； -->
@@ -329,16 +329,7 @@
             <!-- 指定是否只生成domain类，如果设置为true，只生成domain类，如果还配置了sqlMapGenerator，那么在mapper XML文件中，只生成resultMap元素 -->
             <property name="modelOnly" value="false"/>
         </table>
-        <table tableName="t_user_role" domainObjectName="UserRole">
-            <!-- 参考 javaModelGenerator 的 constructorBased属性-->
-            <property name="constructorBased" value="false"/>
-            <!-- 默认为false，如果设置为true，在生成的SQL中，table名字不会加上catalog或schema； -->
-            <property name="ignoreQualifiersAtRuntime" value="false"/>
-            <!-- 参考 javaModelGenerator 的 immutable 属性 -->
-            <property name="immutable" value="false"/>
-            <!-- 指定是否只生成domain类，如果设置为true，只生成domain类，如果还配置了sqlMapGenerator，那么在mapper XML文件中，只生成resultMap元素 -->
-            <property name="modelOnly" value="false"/>
-        </table>
+
 
     </context>
 
