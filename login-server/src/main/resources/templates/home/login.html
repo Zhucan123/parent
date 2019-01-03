@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>登录</title>
-    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}"  />
     <link rel="stylesheet" th:href="@{css/signin.css}"/>
     <style type="text/css">
         body {
@@ -34,6 +34,7 @@
     <div class="starter-template">
         <p th:if="${param.logout}" class="bg-warning">已注销</p>
         <p th:if="${param.error}" class="bg-danger">有错误，请重试</p>
+        <img th:src="@{26.jpg}" width="600px" height="240px">
         <h2>使用账号密码登录</h2>
         <form class="form-signin" role="form" name="form" th:action="@{/login}" action="/login" method="post">
             <div class="form-group">

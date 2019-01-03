@@ -1,4 +1,4 @@
-package com.zc.loginserver.service;
+package com.zc.loginserver.securityConfig;
 
 /**
  * Created by zhuCan on 2018/12/21.

@@ -1,4 +1,4 @@
-package com.zc.loginserver.service;
+package com.zc.loginserver.securityConfig;
 
 import com.zc.loginserver.domain.entity.SysPermission;
 import com.zc.loginserver.domain.entity.SysPermissionExample;

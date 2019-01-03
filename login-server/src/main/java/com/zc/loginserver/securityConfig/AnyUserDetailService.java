@@ -1,14 +1,12 @@
-package com.zc.loginserver.service;
+package com.zc.loginserver.securityConfig;
 
 import com.zc.loginserver.domain.entity.SysPermission;
-import com.zc.loginserver.domain.entity.SysPermissionExample;
 import com.zc.loginserver.domain.entity.SysUser;
 import com.zc.loginserver.domain.entity.SysUserExample;
 import com.zc.loginserver.domain.repository.SysPermissionMapper;
 import com.zc.loginserver.domain.repository.SysUserMapper;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -50,7 +48,7 @@ public class AnyUserDetailService implements UserDetailsService {
                     grantedAuthorities.add(grantedAuthority);
                 }
             }
-            return new User(user.getUsername(),user.getPassword(),grantedAuthorities);
+            return new AnyUser(user.getUsername(),user.getPassword(),grantedAuthorities);
         }else {
             throw new UsernameNotFoundException("admin: "+s+" not found!");
         }

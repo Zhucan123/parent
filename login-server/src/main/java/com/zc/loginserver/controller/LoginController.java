@@ -21,7 +21,7 @@ public class LoginController {
 
     @RequestMapping("/admin")
     public String hello(){
-        return "hi! admin";
+        return "home/welcome";
     }
 
     @RequestMapping("/login")

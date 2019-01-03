@@ -1,4 +1,4 @@
-package com.zc.loginserver.service;
+package com.zc.loginserver.securityConfig;
 
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.AccessDeniedException;
@@ -8,6 +8,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 
+import java.security.Principal;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -36,7 +37,7 @@ public class MyAccessDecisionManager implements AccessDecisionManager {
         for(Iterator<ConfigAttribute> iter = configAttributes.iterator(); iter.hasNext(); ) {
             c = iter.next();
             needRole = c.getAttribute();
-            for(GrantedAuthority ga : authentication.getAuthorities()) {//authentication 为在注释1 中循环添加到 GrantedAuthority 对象中的权限信息集合
+            for(GrantedAuthority ga : ((AnyUser)authentication.getPrincipal()).getAuthorities()) {//authentication 为在注释1 中循环添加到 GrantedAuthority 对象中的权限信息集合
                 if(needRole.trim().equals(ga.getAuthority())) {
                     return;
                 }

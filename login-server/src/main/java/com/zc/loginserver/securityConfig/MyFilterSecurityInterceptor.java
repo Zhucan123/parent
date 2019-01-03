@@ -1,4 +1,4 @@
-package com.zc.loginserver.service;
+package com.zc.loginserver.securityConfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.SecurityMetadataSource;
@@ -21,7 +21,7 @@ import java.io.IOException;
 public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor implements Filter{
 
     @Autowired
-    private FilterInvocationSecurityMetadataSource filterInvocationSecurityMetadataSource;
+    private MyInvocationSecurityMetadataSourceService filterInvocationSecurityMetadataSource;
 
     @Autowired
     public void setMyAccessDecisionManager(MyAccessDecisionManager myAccessDecisionManager) {
