@@ -23,7 +23,7 @@ public class SecondaryTest {
 
     @Test
     public void test(){
-        List<CraftEntity> craftEntities=craftRepository.findAll();
+       // List<CraftEntity> craftEntities=craftRepository.findAll();
         System.err.println("123");
     }
 }

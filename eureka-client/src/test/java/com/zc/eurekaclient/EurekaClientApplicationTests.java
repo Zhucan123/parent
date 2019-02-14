@@ -28,10 +28,10 @@ public class EurekaClientApplicationTests {
         /*String sql="select count(*) from c_user";
         String res1=oracleTemplate.queryForObject(sql,String.class);
         String RES2=mysqlTemplate.queryForObject(sql,String.class);*/
+       /* messageQueue.putMsg("23");
         messageQueue.putMsg("23");
         messageQueue.putMsg("23");
-        messageQueue.putMsg("23");
-        messageQueue.start();
+        messageQueue.start();*/
 
 
         boolean c=new Integer("1").getClass().isInstance(new Integer("1"));
