@@ -14,7 +14,7 @@ import java.util.Collection;
  * Created by zhuCan on 2018/12/21.
  * Project parent.
  * Date 2018/12/21   Time 9:47.
- *
+ * <p>
  * 这个是供security登录验证用的,非entity
  */
 @Getter

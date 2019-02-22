@@ -30,7 +30,6 @@ public class SysUser extends BaseDomain {
      * This method returns the value of the database column sys_user.id
      *
      * @return the value of sys_user.id
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public Long getId() {
@@ -42,7 +41,6 @@ public class SysUser extends BaseDomain {
      * This method sets the value of the database column sys_user.id
      *
      * @param id the value for sys_user.id
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public void setId(Long id) {
@@ -54,7 +52,6 @@ public class SysUser extends BaseDomain {
      * This method returns the value of the database column sys_user.username
      *
      * @return the value of sys_user.username
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public String getUsername() {
@@ -66,7 +63,6 @@ public class SysUser extends BaseDomain {
      * This method sets the value of the database column sys_user.username
      *
      * @param username the value for sys_user.username
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public void setUsername(String username) {
@@ -78,7 +74,6 @@ public class SysUser extends BaseDomain {
      * This method returns the value of the database column sys_user.password
      *
      * @return the value of sys_user.password
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public String getPassword() {
@@ -90,7 +85,6 @@ public class SysUser extends BaseDomain {
      * This method sets the value of the database column sys_user.password
      *
      * @param password the value for sys_user.password
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public void setPassword(String password) {

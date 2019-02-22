@@ -18,7 +18,7 @@ import java.io.IOException;
  * Date 2018/12/25   Time 14:34.
  */
 @Service
-public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor implements Filter{
+public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor implements Filter {
 
     @Autowired
     private MyInvocationSecurityMetadataSourceService filterInvocationSecurityMetadataSource;
@@ -27,22 +27,23 @@ public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor imp
     public void setMyAccessDecisionManager(MyAccessDecisionManager myAccessDecisionManager) {
         super.setAccessDecisionManager(myAccessDecisionManager);
     }
+
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
-        FilterInvocation filterInvocation=new FilterInvocation(request,response,chain);
+        FilterInvocation filterInvocation = new FilterInvocation(request, response, chain);
         invoke(filterInvocation);
     }
 
-    private void invoke(FilterInvocation invocation){
-        InterceptorStatusToken token=super.beforeInvocation(invocation);
-        try{
+    private void invoke(FilterInvocation invocation) {
+        InterceptorStatusToken token = super.beforeInvocation(invocation);
+        try {
             invocation.getChain().doFilter(invocation.getRequest(), invocation.getResponse());
 
-        }catch ( Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
-            super.afterInvocation(token,null);
+        } finally {
+            super.afterInvocation(token, null);
         }
     }
 

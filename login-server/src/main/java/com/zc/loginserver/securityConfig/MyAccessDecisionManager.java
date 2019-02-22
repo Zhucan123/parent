@@ -29,23 +29,22 @@ public class MyAccessDecisionManager implements AccessDecisionManager {
     @Override
     public void decide(Authentication authentication, Object object, Collection<ConfigAttribute> configAttributes) throws AccessDeniedException, InsufficientAuthenticationException {
 
-        if(null== configAttributes || configAttributes.size() <=0) {
+        if (null == configAttributes || configAttributes.size() <= 0) {
             return;
         }
         ConfigAttribute c;
         String needRole;
-        for(Iterator<ConfigAttribute> iter = configAttributes.iterator(); iter.hasNext(); ) {
+        for (Iterator<ConfigAttribute> iter = configAttributes.iterator(); iter.hasNext(); ) {
             c = iter.next();
             needRole = c.getAttribute();
-            for(GrantedAuthority ga : ((AnyUser)authentication.getPrincipal()).getAuthorities()) {//authentication 为在注释1 中循环添加到 GrantedAuthority 对象中的权限信息集合
-                if(needRole.trim().equals(ga.getAuthority())) {
+            for (GrantedAuthority ga : ((AnyUser) authentication.getPrincipal()).getAuthorities()) {//authentication 为在注释1 中循环添加到 GrantedAuthority 对象中的权限信息集合
+                if (needRole.trim().equals(ga.getAuthority())) {
                     return;
                 }
             }
         }
         throw new AccessDeniedException("no right");
     }
-
 
 
     @Override

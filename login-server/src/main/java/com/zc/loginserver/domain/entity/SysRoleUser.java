@@ -30,7 +30,6 @@ public class SysRoleUser extends BaseDomain {
      * This method returns the value of the database column sys_role_user.id
      *
      * @return the value of sys_role_user.id
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public Long getId() {
@@ -42,7 +41,6 @@ public class SysRoleUser extends BaseDomain {
      * This method sets the value of the database column sys_role_user.id
      *
      * @param id the value for sys_role_user.id
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public void setId(Long id) {
@@ -54,7 +52,6 @@ public class SysRoleUser extends BaseDomain {
      * This method returns the value of the database column sys_role_user.sys_user_id
      *
      * @return the value of sys_role_user.sys_user_id
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public Long getSysUserId() {
@@ -66,7 +63,6 @@ public class SysRoleUser extends BaseDomain {
      * This method sets the value of the database column sys_role_user.sys_user_id
      *
      * @param sysUserId the value for sys_role_user.sys_user_id
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public void setSysUserId(Long sysUserId) {
@@ -78,7 +74,6 @@ public class SysRoleUser extends BaseDomain {
      * This method returns the value of the database column sys_role_user.sys_role_id
      *
      * @return the value of sys_role_user.sys_role_id
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public Long getSysRoleId() {
@@ -90,7 +85,6 @@ public class SysRoleUser extends BaseDomain {
      * This method sets the value of the database column sys_role_user.sys_role_id
      *
      * @param sysRoleId the value for sys_role_user.sys_role_id
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public void setSysRoleId(Long sysRoleId) {

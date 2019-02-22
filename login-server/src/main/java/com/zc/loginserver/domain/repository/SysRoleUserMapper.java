@@ -2,7 +2,9 @@ package com.zc.loginserver.domain.repository;
 
 import com.zc.loginserver.domain.entity.SysRoleUser;
 import com.zc.loginserver.domain.entity.SysRoleUserExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 
@@ -30,10 +32,10 @@ public interface SysRoleUserMapper {
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     @Insert({
-        "insert into sys_role_user (id, sys_user_id, ",
-        "sys_role_id)",
-        "values (#{id,jdbcType=BIGINT}, #{sysUserId,jdbcType=BIGINT}, ",
-        "#{sysRoleId,jdbcType=BIGINT})"
+            "insert into sys_role_user (id, sys_user_id, ",
+            "sys_role_id)",
+            "values (#{id,jdbcType=BIGINT}, #{sysUserId,jdbcType=BIGINT}, ",
+            "#{sysRoleId,jdbcType=BIGINT})"
     })
     int insert(SysRoleUser record);
 

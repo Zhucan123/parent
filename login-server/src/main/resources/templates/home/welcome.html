@@ -4,11 +4,12 @@
 <head>
     <meta content="text/html;charset=UTF-8"/>
     <title sec:authentication="name"></title>
-    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}"/>
     <style type="text/css">
         body {
             padding-top: 50px;
         }
+
         .starter-template {
             padding: 40px 15px;
             text-align: center;
@@ -35,15 +36,15 @@
 
     <div class="starter-template">
 
-        </div>
-        <div sec:authorize="hasRole('ROLE_ADMIN')"> <!-- 用户类型为ROLE_ADMIN 显示 -->
-            <p class="bg-info">恭喜您,您有 ROLE_ADMIN 权限 </p>
-        </div>
-
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" class="btn btn-primary" value="注销"/>
-        </form>
     </div>
+    <div sec:authorize="hasRole('ROLE_ADMIN')"> <!-- 用户类型为ROLE_ADMIN 显示 -->
+        <p class="bg-info">恭喜您,您有 ROLE_ADMIN 权限 </p>
+    </div>
+
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" class="btn btn-primary" value="注销"/>
+    </form>
+</div>
 
 </div>
 

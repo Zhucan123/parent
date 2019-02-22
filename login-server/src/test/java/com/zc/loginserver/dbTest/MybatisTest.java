@@ -23,9 +23,9 @@ public class MybatisTest {
     private SysPermissionMapper permissionMapper;
 
     @Test
-    public void test(){
+    public void test() {
         List<SysPermission> permissionList = permissionMapper.findPermissionByUserId(1L);
-        for (SysPermission s:permissionList){
+        for (SysPermission s : permissionList) {
             System.err.println(s.getName());
         }
     }

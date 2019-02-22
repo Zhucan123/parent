@@ -2,7 +2,9 @@ package com.zc.loginserver.domain.repository;
 
 import com.zc.loginserver.domain.entity.SysUser;
 import com.zc.loginserver.domain.entity.SysUserExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 
@@ -30,10 +32,10 @@ public interface SysUserMapper {
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     @Insert({
-        "insert into sys_user (id, username, ",
-        "password)",
-        "values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, ",
-        "#{password,jdbcType=VARCHAR})"
+            "insert into sys_user (id, username, ",
+            "password)",
+            "values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, ",
+            "#{password,jdbcType=VARCHAR})"
     })
     int insert(SysUser record);
 

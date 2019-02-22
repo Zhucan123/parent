@@ -2,7 +2,9 @@ package com.zc.loginserver.domain.repository;
 
 import com.zc.loginserver.domain.entity.SysPermissionRole;
 import com.zc.loginserver.domain.entity.SysPermissionRoleExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 
@@ -30,10 +32,10 @@ public interface SysPermissionRoleMapper {
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     @Insert({
-        "insert into sys_permission_role (id, role_id, ",
-        "permission_id)",
-        "values (#{id,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT}, ",
-        "#{permissionId,jdbcType=BIGINT})"
+            "insert into sys_permission_role (id, role_id, ",
+            "permission_id)",
+            "values (#{id,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT}, ",
+            "#{permissionId,jdbcType=BIGINT})"
     })
     int insert(SysPermissionRole record);
 

@@ -46,7 +46,6 @@ public class SysPermission extends BaseDomain {
      * This method returns the value of the database column sys_permission.id
      *
      * @return the value of sys_permission.id
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public Long getId() {
@@ -58,7 +57,6 @@ public class SysPermission extends BaseDomain {
      * This method sets the value of the database column sys_permission.id
      *
      * @param id the value for sys_permission.id
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public void setId(Long id) {
@@ -70,7 +68,6 @@ public class SysPermission extends BaseDomain {
      * This method returns the value of the database column sys_permission.name
      *
      * @return the value of sys_permission.name
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public String getName() {
@@ -82,7 +79,6 @@ public class SysPermission extends BaseDomain {
      * This method sets the value of the database column sys_permission.name
      *
      * @param name the value for sys_permission.name
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public void setName(String name) {
@@ -94,7 +90,6 @@ public class SysPermission extends BaseDomain {
      * This method returns the value of the database column sys_permission.description
      *
      * @return the value of sys_permission.description
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public String getDescription() {
@@ -106,7 +101,6 @@ public class SysPermission extends BaseDomain {
      * This method sets the value of the database column sys_permission.description
      *
      * @param description the value for sys_permission.description
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public void setDescription(String description) {
@@ -118,7 +112,6 @@ public class SysPermission extends BaseDomain {
      * This method returns the value of the database column sys_permission.url
      *
      * @return the value of sys_permission.url
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public String getUrl() {
@@ -130,7 +123,6 @@ public class SysPermission extends BaseDomain {
      * This method sets the value of the database column sys_permission.url
      *
      * @param url the value for sys_permission.url
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public void setUrl(String url) {
@@ -142,7 +134,6 @@ public class SysPermission extends BaseDomain {
      * This method returns the value of the database column sys_permission.pid
      *
      * @return the value of sys_permission.pid
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public Long getPid() {
@@ -154,7 +145,6 @@ public class SysPermission extends BaseDomain {
      * This method sets the value of the database column sys_permission.pid
      *
      * @param pid the value for sys_permission.pid
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public void setPid(Long pid) {

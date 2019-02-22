@@ -31,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     @Bean
-    AnyUserDetailService customUserService(){ //注册UserDetailsService 的bean
+    AnyUserDetailService customUserService() { //注册UserDetailsService 的bean
         return new AnyUserDetailService();
     }
 
@@ -46,6 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(customUserService()).passwordEncoder(new MyPasswordEncoder()); //user Details Service验证
 
     }
+
     @Override
     public void configure(WebSecurity web) throws Exception {
         //解决静态资源被拦截的问题
@@ -58,7 +59,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 //.anyRequest().authenticated() //任何请求,登录后可以访问
-                .antMatchers( "/static/**","login.html").permitAll()
+                .antMatchers("/static/**", "login.html").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -76,8 +77,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public SavedRequestAwareAuthenticationSuccessHandler loginSuccessHandler(){
-        return new SavedRequestAwareAuthenticationSuccessHandler(){
+    public SavedRequestAwareAuthenticationSuccessHandler loginSuccessHandler() {
+        return new SavedRequestAwareAuthenticationSuccessHandler() {
             @Override
             public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
                 AnyUser userDetails = (AnyUser) authentication.getPrincipal();

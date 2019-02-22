@@ -22,7 +22,6 @@ public class SysRole extends BaseDomain {
      * This method returns the value of the database column sys_role.id
      *
      * @return the value of sys_role.id
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public Long getId() {
@@ -34,7 +33,6 @@ public class SysRole extends BaseDomain {
      * This method sets the value of the database column sys_role.id
      *
      * @param id the value for sys_role.id
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public void setId(Long id) {
@@ -46,7 +44,6 @@ public class SysRole extends BaseDomain {
      * This method returns the value of the database column sys_role.name
      *
      * @return the value of sys_role.name
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public String getName() {
@@ -58,7 +55,6 @@ public class SysRole extends BaseDomain {
      * This method sets the value of the database column sys_role.name
      *
      * @param name the value for sys_role.name
-     *
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     public void setName(String name) {

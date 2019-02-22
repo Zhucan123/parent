@@ -33,24 +33,24 @@ public class AnyUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         //查询用户,并判断是否存在
-        SysUserExample userExample=new SysUserExample();
+        SysUserExample userExample = new SysUserExample();
         SysUserExample.Criteria criteria = userExample.createCriteria();
         criteria.andUsernameLike(s);
         List<SysUser> sysUsers = userMapper.selectByExample(userExample);
 
-        if (sysUsers!=null&&sysUsers.size()>0){
+        if (sysUsers != null && sysUsers.size() > 0) {
             SysUser user = sysUsers.get(0);
             List<SysPermission> permissionList = permissionMapper.findPermissionByUserId(user.getId());
-            List<GrantedAuthority> grantedAuthorities=new ArrayList<>();
-            for (SysPermission permission:permissionList){
-                if (permission!=null&&permission.getName()!=null){
-                    GrantedAuthority grantedAuthority=new SimpleGrantedAuthority(permission.getName());
+            List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
+            for (SysPermission permission : permissionList) {
+                if (permission != null && permission.getName() != null) {
+                    GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(permission.getName());
                     grantedAuthorities.add(grantedAuthority);
                 }
             }
-            return new AnyUser(user.getUsername(),user.getPassword(),grantedAuthorities);
-        }else {
-            throw new UsernameNotFoundException("admin: "+s+" not found!");
+            return new AnyUser(user.getUsername(), user.getPassword(), grantedAuthorities);
+        } else {
+            throw new UsernameNotFoundException("admin: " + s + " not found!");
         }
     }
 }

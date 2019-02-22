@@ -2,7 +2,9 @@ package com.zc.loginserver.domain.repository;
 
 import com.zc.loginserver.domain.entity.SysPermission;
 import com.zc.loginserver.domain.entity.SysPermissionExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 
@@ -32,12 +34,12 @@ public interface SysPermissionMapper {
      * @mbggenerated Tue Dec 25 16:42:45 CST 2018
      */
     @Insert({
-        "insert into sys_permission (id, name, ",
-        "description, url, ",
-        "pid)",
-        "values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, ",
-        "#{description,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, ",
-        "#{pid,jdbcType=BIGINT})"
+            "insert into sys_permission (id, name, ",
+            "description, url, ",
+            "pid)",
+            "values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, ",
+            "#{description,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, ",
+            "#{pid,jdbcType=BIGINT})"
     })
     int insert(SysPermission record);
 

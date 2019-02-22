@@ -25,34 +25,34 @@ public class MyInvocationSecurityMetadataSourceService implements FilterInvocati
     @Resource
     private SysPermissionMapper permissionMapper;
 
-    private Map<String,Collection<ConfigAttribute>> map;
+    private Map<String, Collection<ConfigAttribute>> map;
 
     //加载权限表中所有的权限
-    private void loadResourceDifine(){
-        map=new HashMap<>();
-        Collection<ConfigAttribute> attributes=null;
-        ConfigAttribute attribute=null;
-        List<SysPermission> permissionList=permissionMapper.selectByExample(new SysPermissionExample());
-        for (SysPermission permission:permissionList){
-            attributes=new ArrayList<>();
-            attribute=new SecurityConfig(permission.getName());
+    private void loadResourceDifine() {
+        map = new HashMap<>();
+        Collection<ConfigAttribute> attributes = null;
+        ConfigAttribute attribute = null;
+        List<SysPermission> permissionList = permissionMapper.selectByExample(new SysPermissionExample());
+        for (SysPermission permission : permissionList) {
+            attributes = new ArrayList<>();
+            attribute = new SecurityConfig(permission.getName());
             attributes.add(attribute);
-            map.put(permission.getUrl(),attributes);
+            map.put(permission.getUrl(), attributes);
         }
     }
 
     @Override
     public Collection<ConfigAttribute> getAttributes(Object object) throws IllegalArgumentException {
-        if (map==null){
+        if (map == null) {
             loadResourceDifine();
         }
-        HttpServletRequest request=((FilterInvocation)object).getHttpRequest();
-        AntPathRequestMatcher matcher=null;
-        String resUrl=null;
-        for (Iterator<String> iterator=map.keySet().iterator();iterator.hasNext();){
-            resUrl=iterator.next();
-            matcher=new AntPathRequestMatcher(resUrl);
-            if (matcher.matches(request)){
+        HttpServletRequest request = ((FilterInvocation) object).getHttpRequest();
+        AntPathRequestMatcher matcher = null;
+        String resUrl = null;
+        for (Iterator<String> iterator = map.keySet().iterator(); iterator.hasNext(); ) {
+            resUrl = iterator.next();
+            matcher = new AntPathRequestMatcher(resUrl);
+            if (matcher.matches(request)) {
                 return map.get(resUrl);
             }
         }

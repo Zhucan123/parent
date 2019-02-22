@@ -13,19 +13,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LoginController {
 
     @RequestMapping("/welcome")
-    public String index(Model model){
-        model.addAttribute("msg","index!");
+    public String index(Model model) {
+        model.addAttribute("msg", "index!");
 
         return "home/welcome";
     }
 
     @RequestMapping("/admin")
-    public String hello(){
+    public String hello() {
         return "home/welcome";
     }
 
     @RequestMapping("/login")
-    public String login(){
+    public String login() {
         return "home/login";
     }
+
+
 }

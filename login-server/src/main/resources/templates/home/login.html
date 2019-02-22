@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>登录</title>
-    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}"  />
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{css/signin.css}"/>
     <style type="text/css">
         body {
@@ -38,11 +38,11 @@
         <h2>使用账号密码登录</h2>
         <form class="form-signin" role="form" name="form" th:action="@{/login}" action="/login" method="post">
             <div class="form-group">
-                <label >账号</label>
+                <label>账号</label>
                 <input type="text" class="form-control" name="username" value="" placeholder="账号"/>
             </div>
             <div class="form-group">
-                <label >密码</label>
+                <label>密码</label>
                 <input type="password" class="form-control" name="password" placeholder="密码"/>
             </div>
             <input type="submit" id="login" value="Login" class="btn btn-primary"/>
