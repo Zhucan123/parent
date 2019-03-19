@@ -15,23 +15,25 @@ public class RabbitMqApplicationTests {
 
     @Autowired
     private Producer producer;
+
+    private static Thread thread;
     @Test
     public void contextLoads() {
-        Thread thread=new Thread(new Runnable(){
-            @Override
-            public void run(){
-                while (true){
+        thread=new Thread(()->{
+            //synchronized (producer) {
+                for (;;) {
                     producer.sendMsg();
+                    System.err.println("发射");
                     try {
                         sleep(1230);
-                    }catch (InterruptedException e){
+                    } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-
-            }
+           // }
         });
         thread.start();
+         //System.err.println("start");
     }
 
 }

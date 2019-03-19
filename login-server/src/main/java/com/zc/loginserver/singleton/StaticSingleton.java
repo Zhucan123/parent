@@ -18,6 +18,7 @@ package com.zc.loginserver.singleton;
  * 缺点：依旧不能解决在反序列化、反射、克隆时重新生成实例对象的问题
  */
 public class StaticSingleton {
+
     private StaticSingleton() {
     }
 
